@@ -1,0 +1,98 @@
+/* ============= Global Variables ============= */
+:root {
+  --primary-color: #e50914;
+  --text-light: rgba(255, 255, 255, 0.9);
+  --text-dark: #ffffff;
+  --background-dark: #000000;
+  --hover-bg: rgba(255, 255, 255, 0.1);
+}
+
+/* ============= Navbar ============= */
+.navbar {
+  background-color: var(--background-dark);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* ============= Brand ============= */
+.navbar-brand a {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--text-dark);
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar-brand a:hover {
+  color: var(--primary-color);
+}
+
+/* ============= Navbar Links ============= */
+.navbar-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--text-light);
+  position: relative;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.nav-link:hover {
+  background-color: var(--hover-bg);
+}
+
+/* Active Link Indicator */
+.nav-link.active {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+/* ============= Mobile Navigation ============= */
+.menu-icon {
+  display: none;
+  font-size: 1.8rem;
+  color: var(--text-dark);
+  cursor: pointer;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem;
+  }
+
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: var(--background-dark);
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .navbar-links.open {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}

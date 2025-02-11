@@ -1,0 +1,171 @@
+/* ============= General Styling ============= */
+.home {
+  padding: 2rem 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #121212;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* ============= Search Form ============= */
+.search-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.search-form {
+  display: flex;
+  gap: 1rem;
+  max-width: 700px;
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #222;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.search-input {
+  flex: 1;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #333;
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.search-input::placeholder {
+  color: #bbb;
+}
+
+.search-input:focus {
+  outline: none;
+  border: 2px solid #e50914;
+  box-shadow: 0 0 0 2px rgba(229, 9, 20, 0.5);
+}
+
+.search-button {
+  padding: 1rem 1.5rem;
+  background-color: #e50914;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.search-button:hover {
+  background-color: #ff3d3d;
+  transform: scale(1.05);
+}
+
+.search-button:active {
+  transform: scale(0.95);
+}
+
+/* ============= Movies Container ============= */
+.movies-container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 1rem;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+/* ============= Movie Card Styling ============= */
+.movie-card {
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.movie-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.movie-card:hover img {
+  transform: scale(1.05);
+}
+
+/* ============= Error and Loading Styling ============= */
+.error {
+  color: #ff6b6b;
+  text-align: center;
+  margin: 1rem 0;
+  font-weight: bold;
+}
+
+.loading {
+  color: #e50914;
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 2rem;
+}
+
+.no-results {
+  color: #bbb;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* ============= Responsive Styling ============= */
+@media (min-width: 1400px) {
+  .movies-container {
+    max-width: 1800px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 1200px) {
+  .movies-container {
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .movies-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  .search-form {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .movies-container {
+    grid-template-columns: 1fr;
+  }
+  .search-form {
+    gap: 0.5rem;
+    width: 100%;
+  }
+  .search-input,
+  .search-button {
+    width: 100%;
+  }
+}
