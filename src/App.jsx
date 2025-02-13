@@ -3,11 +3,12 @@ import './css/App.css'
 import Home from './pages/Home'
 import Favourite from './pages/Favorites'
 import NavBar from './components/NavBar'
+import { MovieProvider } from './contexts/MovieContext'
 
 
 function App() {
 
-  return ( <div>
+  return ( <MovieProvider>
 
     <NavBar />
     <main className='main-content'>
@@ -18,7 +19,7 @@ function App() {
     </main>
 
   
-    </div>
+    </MovieProvider>
   )
 }
 
